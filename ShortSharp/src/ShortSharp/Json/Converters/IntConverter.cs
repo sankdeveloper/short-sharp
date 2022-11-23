@@ -13,7 +13,7 @@ namespace ShortSharp.Json.Converters;
 /// public int IntegerId { get; set; }
 /// </code>
 /// </example>
-public class IntToStringJsonStringConverter : JsonConverter<int>
+public class IntConverter : JsonConverter<int>
 {
     /// <inheritdoc />
     public override int Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)

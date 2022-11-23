@@ -6,7 +6,7 @@ namespace ShortSharp.Json.Converters;
 /// <summary>
 /// 
 /// </summary>
-public class DynamicFieldDataConverter : JsonConverter<IReadOnlyDictionary<string, dynamic>>
+public class DynamicNestedObjectConverter : JsonConverter<IReadOnlyDictionary<string, dynamic>>
 {
     /// <inheritdoc />
     public override Dictionary<string, dynamic>? Read(ref Utf8JsonReader reader, Type typeToConvert,

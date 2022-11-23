@@ -14,7 +14,7 @@ namespace ShortSharp.Json.Converters;
 /// public DateTime Date { get; set; }
 /// </code>
 /// </example>
-public class DateTimeToStringJsonStringConverter: JsonConverter<DateTime>
+public class DateTimeStringConverter: JsonConverter<DateTime>
 {
     private const string DateTimeFormat = "yyyy-MM-dd HH:mm:ss";
 
