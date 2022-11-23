@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortSharp", "src\ShortSharp\ShortSharp.csproj", "{DAA81A8D-9688-4362-B74B-68035E6AB220}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{08111247-D817-448E-AD5D-0A12E768D677}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{0A1A97B0-6F29-4A22-932D-E628EE765CAC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DAA81A8D-9688-4362-B74B-68035E6AB220}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAA81A8D-9688-4362-B74B-68035E6AB220}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAA81A8D-9688-4362-B74B-68035E6AB220}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAA81A8D-9688-4362-B74B-68035E6AB220}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DAA81A8D-9688-4362-B74B-68035E6AB220} = {08111247-D817-448E-AD5D-0A12E768D677}
+	EndGlobalSection
+EndGlobal

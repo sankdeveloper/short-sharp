@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+        <PackageIcon>shortsharp.png</PackageIcon>
+        <RepositoryUrl>https://github.com/sankdeveloper/short-sharp.git</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <Description>Ready made short code wrappers</Description>
+        <Authors>Sanket NaikRedkar</Authors>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+</Project>
