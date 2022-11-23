@@ -10,7 +10,7 @@ namespace ShortSharp.Json.Converters;
 /// <example>
 /// <code>
 /// [JsonPropertyName("date")]
-/// [JsonConverter(typeof(DateTimeToStringJsonStringConverter))]
+/// [JsonConverter(typeof(DateTimeStringConverter))]
 /// public DateTime Date { get; set; }
 /// </code>
 /// </example>

@@ -9,7 +9,7 @@ namespace ShortSharp.Json.Converters;
 /// <example>
 /// <code>
 /// [JsonPropertyName("id")]
-/// [JsonConverter(typeof(IntToStringJsonStringConverter))]
+/// [JsonConverter(typeof(IntConverter))]
 /// public int IntegerId { get; set; }
 /// </code>
 /// </example>
