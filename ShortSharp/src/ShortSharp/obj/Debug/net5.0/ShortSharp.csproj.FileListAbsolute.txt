@@ -1,5 +1,0 @@
-C:\Users\sanket.naik\source\repos\short-sharp\ShortSharp\src\ShortSharp\obj\Debug\net5.0\ShortSharp.csproj.AssemblyReference.cache
-C:\Users\sanket.naik\source\repos\short-sharp\ShortSharp\src\ShortSharp\obj\Debug\net5.0\ShortSharp.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\sanket.naik\source\repos\short-sharp\ShortSharp\src\ShortSharp\obj\Debug\net5.0\ShortSharp.AssemblyInfoInputs.cache
-C:\Users\sanket.naik\source\repos\short-sharp\ShortSharp\src\ShortSharp\obj\Debug\net5.0\ShortSharp.AssemblyInfo.cs
-C:\Users\sanket.naik\source\repos\short-sharp\ShortSharp\src\ShortSharp\obj\Debug\net5.0\ShortSharp.csproj.CoreCompileInputs.cache
