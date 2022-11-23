@@ -1,5 +1,6 @@
 using FluentAssertions;
 using ShortSharp.Extensions;
+using Xunit;
 
 namespace Test.ShortSharp;
 
