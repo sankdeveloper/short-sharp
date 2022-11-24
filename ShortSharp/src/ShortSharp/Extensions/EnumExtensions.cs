@@ -37,7 +37,7 @@ public static class EnumExtensions
     /// <summary>
     /// Retrieves the multiple description on the enum
     /// </summary>
-    public static IEnumerable<string> GetDescriptions(Enum value)
+    public static IEnumerable<string> GetDescriptions(this Enum value)
     {
         var type = value.GetType();
         var name = Enum.GetName(type, value);
