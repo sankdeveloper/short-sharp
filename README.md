@@ -1,4 +1,7 @@
 
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+
+
 # ShortSharp
 
 ShortSharp(Your short code helper) is a day to day used C# Helper utility around the most common wrappers!!!
@@ -6,6 +9,12 @@ ShortSharp(Your short code helper) is a day to day used C# Helper utility around
 Please feel free to extend this library :-)
 
 
+## Installation
+
+```bash
+  Install-Package PostSharp
+```
+    
 ## API Reference
 
 #### Advance **Looping**
@@ -28,7 +37,7 @@ foreach (var i in 10)
 }
 ```
 
-#### **String** Extrnsions
+#### **String** Extensions
 ```csharp
 var str = "Hello, Blah blah blah...";
 ```
@@ -46,7 +55,7 @@ var str = "Hello, Blah blah blah...";
 
 
 
-#### **DateTime** Extrnsions
+#### **DateTime** Extensions
 ```csharp
 DateTime dt = new DateTime();
 ```
@@ -57,7 +66,7 @@ DateTime dt = new DateTime();
 | `dt.ToJavaScriptTicks()` | `long` | Gets javascript date-time. |
 
 
-#### **Enum** Extrnsions
+#### **Enum** Extensions
 ```csharp
 enum Level 
 {
@@ -80,7 +89,7 @@ Level @enum = Level.Medium;
 | `EnumExtensions.ToDictionary(Level)` | `Dictionary<string, string>` | Converts to dictionary |
 
 
-#### **QueryString** Extrnsions
+#### **QueryString** Extensions
 ```csharp
 var urlLink = "http://www.my-url/users?type=xyz";
 Uri uri = new Uri(urlLink);
@@ -97,14 +106,6 @@ Uri uri = new Uri(urlLink);
 
 
 
-## Installation
-
-Install my-project with npm
-
-```bash
-  Install-Package PostSharp
-```
-    
 
 
 ## License
@@ -112,5 +113,12 @@ Install my-project with npm
 [MIT](https://choosealicense.com/licenses/mit/)
 
 
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+## Authors
+
+- [@SanketNaik](https://github.com/sankdeveloper)
+
+
+## Roadmap
+
+- Additional Test Cases
 
