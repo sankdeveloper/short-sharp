@@ -17,7 +17,7 @@ Please feel free to extend this library :-)
     
 ## API Reference
 
-#### Advance **Looping**
+### Advance **Looping**
 ```csharp
 foreach (var i in 5..10)
 {
@@ -37,7 +37,8 @@ foreach (var i in 10)
 }
 ```
 
-#### **String** Extensions
+### Extension Helpers
+##### **String** Extensions
 ```csharp
 var str = "Hello, Blah blah blah...";
 ```
@@ -55,7 +56,7 @@ var str = "Hello, Blah blah blah...";
 
 
 
-#### **DateTime** Extensions
+##### **DateTime** Extensions
 ```csharp
 DateTime dt = new DateTime();
 ```
@@ -66,7 +67,7 @@ DateTime dt = new DateTime();
 | `dt.ToJavaScriptTicks()` | `long` | Gets javascript date-time. |
 
 
-#### **Enum** Extensions
+##### **Enum** Extensions
 ```csharp
 enum Level 
 {
@@ -89,7 +90,7 @@ Level @enum = Level.Medium;
 | `EnumExtensions.ToDictionary(Level)` | `Dictionary<string, string>` | Converts to dictionary |
 
 
-#### **QueryString** Extensions
+##### **QueryString** Extensions
 ```csharp
 var urlLink = "http://www.my-url/users?type=xyz";
 Uri uri = new Uri(urlLink);
@@ -101,6 +102,31 @@ Uri uri = new Uri(urlLink);
 | `uri.TryGetQueryStringParam(paramKey)` | `string?` | get single querystring value with specified key |
 | `urlLink.TryGetQueryStringParam()` | `string?` | get single querystring value with specified key |
 
+
+### Json Helpers
+##### **Json Converters**
+| Parameter | Description                |
+| :-------- | :------------------------- |
+| `DateTimeStringConverter` | datetime-in-string converter |
+| `IntConverter` | int-in-string converter |
+| `DynamicNestedObjectConverter` | dynamic object to Dictionary converter |
+
+```csharp
+// String format: "2022-10-21" (YYYY-mm-dd)
+[JsonPropertyName("date")]
+[JsonConverter(typeof(DateTimeStringConverter))]
+public DateTime Date { get; set; }
+
+// String format: "123654789"
+[JsonPropertyName("id")]
+[JsonConverter(typeof(IntConverter))]
+public int IntegerId { get; set; }
+
+// String format: {'prop1': {'one': 1}', 'prop2': {'two': 2}'.......}
+[JsonPropertyName("object")]
+[JsonConverter(typeof(DynamicNestedObjectConverter))]
+public IReadOnlyDictionary<string, dynamic>> DynamicObject { get; set; }
+```
 
 
 
