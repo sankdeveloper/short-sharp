@@ -8,12 +8,13 @@ namespace ShortSharp.Extensions;
 
 public static class StringExtensions
 {
-    private static readonly Regex IsWebUrlRegex = new(@"(http|https)://([\w-]+\.)+[\w-]+(/[\w- ./?%&=]*)?", RegexOptions.Singleline | RegexOptions.Compiled);
-    
+    private static readonly Regex IsWebUrlRegex = new(@"(http|https)://([\w-]+\.)+[\w-]+(/[\w- ./?%&=]*)?",
+        RegexOptions.Singleline | RegexOptions.Compiled);
+
     [DebuggerStepThrough]
-    public static bool IsCaseSensitiveEquals(this string value, string comparing)
+    public static bool IsCaseSensitiveEquals(this string value, string compareTo)
     {
-        return string.CompareOrdinal(value, comparing) == 0;
+        return string.CompareOrdinal(value, compareTo) == 0;
     }
 
     [DebuggerStepThrough]
@@ -47,7 +48,7 @@ public static class StringExtensions
     {
         return !string.IsNullOrEmpty(value) && IsWebUrlRegex.IsMatch(value.Trim());
     }
-    
+
     [DebuggerStepThrough]
     public static string UrlEncode(this string value)
     {
@@ -55,11 +56,23 @@ public static class StringExtensions
     }
 
     [DebuggerStepThrough]
+    public static string UrlEncode(this string value, Encoding encoding)
+    {
+        return HttpUtility.UrlEncode(value, encoding);
+    }
+
+    [DebuggerStepThrough]
     public static string UrlDecode(this string value)
     {
         return HttpUtility.UrlDecode(value);
     }
-    
+
+    [DebuggerStepThrough]
+    public static string UrlDecode(this string value, Encoding encoding)
+    {
+        return HttpUtility.UrlDecode(value, encoding);
+    }
+
     [DebuggerStepThrough]
     public static string HtmlEncode(this string value)
     {
