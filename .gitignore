@@ -33,3 +33,4 @@ SerializerTest*/
 *.csproj.user
 *.resharper*
 Download/
+/ShortSharp/src/ShortSharp/nuget.config
