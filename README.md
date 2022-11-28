@@ -17,7 +17,7 @@ Please feel free to extend this library :-)
     
 ## API Reference
 
-### Advance **Looping**
+### ☞ Advance **Looping**
 ```csharp
 foreach (var i in 5..10)
 {
@@ -37,7 +37,7 @@ foreach (var i in 10)
 }
 ```
 
-### Extension Helpers
+### ☞ Extension Helpers
 ##### **String** Extensions
 ```csharp
 var str = "Hello, Blah blah blah...";
@@ -103,7 +103,7 @@ Uri uri = new Uri(urlLink);
 | `urlLink.TryGetQueryStringParam()` | `string?` | get single querystring value with specified key |
 
 
-### Json Helpers
+### ☞ Json Helpers
 ##### **Json Converters**
 | Parameter | Description                |
 | :-------- | :------------------------- |
@@ -128,7 +128,7 @@ public int IntegerId { get; set; }
 public IReadOnlyDictionary<string, dynamic>> DynamicObject { get; set; }
 ```
 
-### Utilities
+### ☞ Utilities
 ##### **Simple In-memory job scheduler**
 ```csharp
 BackgroundCronJobScheduler.Instance.ScheduleNew(
