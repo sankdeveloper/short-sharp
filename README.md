@@ -133,7 +133,7 @@ public IReadOnlyDictionary<string, dynamic>> DynamicObject { get; set; }
 ```csharp
 BackgroundCronJobScheduler.Instance.ScheduleNew(
 		jobFunction: () => System.WriteLine("Task exeecuted"),
-		crownIntervalInDays: 1);
+		crownIntervalInMinutes: 1);
 ```
 
 
