@@ -128,7 +128,13 @@ public int IntegerId { get; set; }
 public IReadOnlyDictionary<string, dynamic>> DynamicObject { get; set; }
 ```
 
-
+### Utilities
+##### **Simple In-memory job scheduler**
+```csharp
+BackgroundCronJobScheduler.Instance.ScheduleNew(
+		jobFunction: () => System.WriteLine("Task exeecuted"),
+		crownIntervalInDays: 1);
+```
 
 
 
