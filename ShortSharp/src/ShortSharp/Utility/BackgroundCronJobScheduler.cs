@@ -9,7 +9,7 @@ public class BackgroundCronJobScheduler : IDisposable
 {
     private static BackgroundCronJobScheduler? _instance;
     public static BackgroundCronJobScheduler Instance => _instance ??= new BackgroundCronJobScheduler();
-    public readonly IDictionary<DateTime, Timer> ScheduledTasks = new Dictionary<DateTime, Timer>();
+    public readonly IList<ScheduledTask> ScheduledTasks = new List<ScheduledTask>();
 
     private BackgroundCronJobScheduler()
     {
@@ -25,31 +25,33 @@ public class BackgroundCronJobScheduler : IDisposable
         timer.Elapsed += (sender, eventArgs) => { jobFunction.Invoke(); };
         timer.Start();
 
-        ScheduledTasks.Add(DateTime.UtcNow, timer);
+        ScheduledTasks.Add(new ScheduledTask(timer));
     }
 
-    public void Clear(DateTime dateTime)
+    public void Clear(Guid scheduleId)
     {
-        if (!ScheduledTasks.ContainsKey(dateTime))
+        if (!ScheduledTasks.Any(_ => _.ScheduleId.Equals(scheduleId)))
         {
             throw new InvalidDataException();
         }
 
-        var task = ScheduledTasks[dateTime];
-        task.Stop();
-        task.Close();
-        task.Dispose();
-        ScheduledTasks.Clear();
+        var task = ScheduledTasks.First(_ => _.ScheduleId.Equals(scheduleId));
+        task.Timer.Stop();
+        task.Timer.Close();
+        task.Timer.Dispose();
+        ScheduledTasks.Remove(task);
     }
 
     public void ClearAll()
     {
         foreach (var task in ScheduledTasks)
         {
-            task.Value.Stop();
-            task.Value.Close();
-            task.Value.Dispose();
+            task.Timer.Stop();
+            task.Timer.Close();
+            task.Timer.Dispose();
         }
+
+        ScheduledTasks.Clear();
     }
 
     public void Dispose()
@@ -63,5 +65,19 @@ public class BackgroundCronJobScheduler : IDisposable
         {
             // ignored
         }
+    }
+}
+
+public class ScheduledTask
+{
+    public Guid ScheduleId { get; }
+    public DateTime UtcDateTime { get; }
+    public Timer Timer { get; }
+
+    public ScheduledTask(Timer timer)
+    {
+        ScheduleId = Guid.NewGuid();
+        UtcDateTime = DateTime.UtcNow;
+        Timer = timer;
     }
 }
