@@ -14,6 +14,14 @@ Please feel free to extend this library :-)
 ```bash
   Install-Package PostSharp
 ```
+
+```bash
+  dotnet add package ShortSharp --version 1.0.0
+```
+
+```bash
+  <PackageReference Include="ShortSharp" Version="1.0.0" />
+```
     
 ## API Reference
 
