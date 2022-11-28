@@ -5,7 +5,7 @@ namespace ShortSharp.Utility;
 /// <summary>
 /// Simple, Basic, Elegant, InMemory implementation of job scheduler
 /// </summary>
-public class BackgroundCronJobScheduler
+public class BackgroundCronJobScheduler : IDisposable
 {
     private static BackgroundCronJobScheduler? _instance;
     public static BackgroundCronJobScheduler Instance => _instance ??= new BackgroundCronJobScheduler();
@@ -34,7 +34,7 @@ public class BackgroundCronJobScheduler
         {
             throw new InvalidDataException();
         }
-        
+
         var task = ScheduledTasks[dateTime];
         task.Stop();
         task.Close();
@@ -49,6 +49,19 @@ public class BackgroundCronJobScheduler
             task.Value.Stop();
             task.Value.Close();
             task.Value.Dispose();
+        }
+    }
+
+    public void Dispose()
+    {
+        try
+        {
+            ClearAll();
+            GC.SuppressFinalize(this);
+        }
+        catch
+        {
+            // ignored
         }
     }
 }
