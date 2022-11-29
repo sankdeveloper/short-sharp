@@ -12,7 +12,7 @@ Please feel free to extend this library :-)
 ## Installation
 
 ```bash
-  Install-Package PostSharp
+  Install-Package ShortSharp
 ```
 
 ```bash
