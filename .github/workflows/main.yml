@@ -28,4 +28,4 @@ jobs:
       - name: 'Build Package'
         run: dotnet build ${{ env.PROJECT_PATH }} --no-restore --configuration Release
       - name: 'Pack Project'
-        run: dotnet pack ${{ env.PROJECT_PATH }} --output ${{ PACKAGE_OUTPUT_DIRECTORY }} --no-restore --configuration Release --no-build --include-symbols
+        run: dotnet pack ${{ env.PROJECT_PATH }} --output ${{ env.PACKAGE_OUTPUT_DIRECTORY }} --no-restore --configuration Release --no-build --include-symbols
