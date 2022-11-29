@@ -1,6 +1,6 @@
 name: dotnet package
 
-on: [push, release]
+on: [release]
 
 env:
   PROJECT_PATH: 'ShortSharp/src/ShortSharp/ShortSharp.csproj'
@@ -17,7 +17,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: 'Setup dotnet ${{ matrix.dotnet-version }}'
+      - name: 'Setup dotnet ${{ matrix.dotnet-version }} environment'
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
@@ -25,13 +25,13 @@ jobs:
       - name: 'Display dotnet version'
         run: dotnet --version
         
-      - name: 'Restore Package'
+      - name: 'Restore package'
         run: dotnet restore ${{ env.PROJECT_PATH }}
         
-      - name: 'Build Package'
+      - name: 'Build package'
         run: dotnet build ${{ env.PROJECT_PATH }} --no-restore --configuration Release
         
-      - name: 'Pack Project'
+      - name: 'Pack nuget'
         run: |
           dotnet pack ${{ env.PROJECT_PATH }} \
           --output ${{ env.PACKAGE_OUTPUT_DIRECTORY }} \
