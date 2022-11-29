@@ -3,8 +3,8 @@ name: dotnet package
 on: [push, release]
 
 env:
-  PROJECT_PATH: ShortSharp/src/ShortSharp/ShortSharp.csproj
-  PACKAGE_OUTPUT_DIRECTORY: ${{ github.workspace }}\output
+  PROJECT_PATH: 'ShortSharp/src/ShortSharp/ShortSharp.csproj'
+  PACKAGE_OUTPUT_DIRECTORY: '${{ github.workspace }}\output'
 
 jobs:
   build:
@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        dotnet-version: [ '6.0.x', '7.0.x' ]
+        dotnet-version: [ '7.0.x' ]
 
     steps:
       - uses: actions/checkout@v3
@@ -20,12 +20,17 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
-      # You can test your matrix by printing the current dotnet version
+          
       - name: 'Display dotnet version'
         run: dotnet --version
+        
       - name: 'Restore Package'
         run: dotnet restore ${{ env.PROJECT_PATH }}
+        
       - name: 'Build Package'
         run: dotnet build ${{ env.PROJECT_PATH }} --no-restore --configuration Release
+        
       - name: 'Pack Project'
         run: dotnet pack ${{ env.PROJECT_PATH }} --output ${{ env.PACKAGE_OUTPUT_DIRECTORY }} --no-restore --configuration Release --no-build --include-symbols
+        
+        
