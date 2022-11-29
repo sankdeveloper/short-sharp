@@ -1,5 +1,5 @@
 # .github/workflows/release.yml
-name: set_semver
+name: Set Semver
 
 on:
   pull_request:
