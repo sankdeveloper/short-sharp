@@ -16,9 +16,11 @@
         <FileVersion>1.0.1</FileVersion>
         <Title>Short Sharp</Title>
         <PackageIcon>logo.png</PackageIcon>
+        <PackageLicenseUrl>https://choosealicense.com/licenses/mit/</PackageLicenseUrl>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     </PropertyGroup>
 
     <ItemGroup>
-        <None Include="logo.png" Pack="true" PackagePath="\"/>
+        <None Include="logo.png" Pack="true" PackagePath="\" />
     </ItemGroup>
 </Project>
