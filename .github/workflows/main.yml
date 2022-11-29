@@ -35,5 +35,5 @@ jobs:
         run: dotnet pack ${{ env.PROJECT_PATH }} --output ${{ env.PACKAGE_OUTPUT_DIRECTORY }} --no-restore --configuration Release --no-build --include-symbols
         
       - name: 'Push to Nuget.org'
-        run: dotnet nuget push ${{ env.PACKAGE_OUTPUT_DIRECTORY }}\*.nupkg --source ${{ env.NUGET_SRC_URL }} --ApiKey ${{ secrets.NUGET_ORG_API_KEY }}
+        run: dotnet nuget push ${{ env.PACKAGE_OUTPUT_DIRECTORY }}\*.nupkg --source ${{ env.NUGET_SRC_URL }} --api-key ${{ secrets.NUGET_ORG_API_KEY }}
         
