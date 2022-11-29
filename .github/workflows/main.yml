@@ -4,7 +4,7 @@ on: [push, release]
 
 env:
   PROJECT_PATH: 'ShortSharp/src/ShortSharp/ShortSharp.csproj'
-  PACKAGE_OUTPUT_DIRECTORY: '${{ github.workspace }}\output'
+  PACKAGE_OUTPUT_DIRECTORY: '${{ github.workspace }}/output'
   NUGET_SRC_URL: 'https://api.nuget.org/v3/index.json'
 
 jobs:
@@ -32,7 +32,7 @@ jobs:
         run: dotnet build ${{ env.PROJECT_PATH }} --no-restore --configuration Release
         
       - name: 'Pack Project'
-        run: dotnet pack ${{ env.PROJECT_PATH }} --output ${{ env.PACKAGE_OUTPUT_DIRECTORY }} --no-restore --configuration Release --no-build --include-symbols
+        run: dotnet pack ${{ env.PROJECT_PATH }} --output ${{ env.PACKAGE_OUTPUT_DIRECTORY }} --no-restore --configuration Release --no-build
         
       - name: 'Push to Nuget.org'
         run: dotnet nuget push ${{ env.PACKAGE_OUTPUT_DIRECTORY }}\*.nupkg --source ${{ env.NUGET_SRC_URL }} --api-key ${{ secrets.NUGET_ORG_API_KEY }}
