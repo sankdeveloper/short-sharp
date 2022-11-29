@@ -146,16 +146,17 @@ BackgroundCronJobScheduler.Instance.ScheduleNew(
 
 
 ## License
-
 [MIT](https://choosealicense.com/licenses/mit/)
 
-
 ## Authors
-
 - [@SanketNaik](https://github.com/sankdeveloper)
+
+## Feedback
+If you have any feedback, please reach out to us at sankdeveloper@gmail.com
 
 
 ## Roadmap
-
-- Additional Test Cases
+- [x] CI/CD pipeline for Nuget.org push.
+- [ ] More features will be still in progress to add.
+- [ ] Test cases and code coverage.
 
