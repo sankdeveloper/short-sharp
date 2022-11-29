@@ -1,13 +1,9 @@
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
-
-# ShortSharp
+# <img align="left" width="100" height="100" src="https://github.com/sankdeveloper/short-sharp/blob/main/ShortSharp/src/ShortSharp/logo.png?raw=true"/>ShortSharp
 
 ShortSharp(Your short code helper) is a day to day used C# Helper utility around the most common wrappers!!!
-
-Please feel free to extend this library :-)
-
 
 ## Installation
 
