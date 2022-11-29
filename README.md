@@ -6,7 +6,7 @@
 
 # <img align="left" width="100" height="100" src="https://github.com/sankdeveloper/short-sharp/blob/main/ShortSharp/src/ShortSharp/logo.png?raw=true"/>ShortSharp
 
-ShortSharp(Your short code helper) is a day to day used C# Helper utility around the most common wrappers!!!
+ShortSharp(Your short code helper) is a day to day used C# Helper utility around the most common wrappers !!!
 
 ## Installation
 
