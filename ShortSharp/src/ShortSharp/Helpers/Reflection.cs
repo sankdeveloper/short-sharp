@@ -12,7 +12,7 @@ public static class Reflection
                 .Select(pi => pi.Name);
     }
 
-    public static Dictionary<string, object?> GetPublicPropertyValues<T>(object source)
+    public static IReadOnlyDictionary<string, object?> GetPublicPropertyValues<T>(object source)
     {
         var type = source.GetType();
         return
