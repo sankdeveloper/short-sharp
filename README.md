@@ -60,7 +60,21 @@ var str = "Hello, Blah blah blah...";
 | `str.UrlDecode(Encoding encoding)` | `string` |  Converts a string that has been encoded for transmission in a URL into a decoded string. |
 | `str.HtmlEncode()` | `string` | Converts a string to an HTML-encoded string.  |
 | `str.HtmlDecode()` | `string` |  Converts a string that has been HTML-encoded for HTTP transmission into a decoded string. |
+| `str.ToMemoryStream(Encoding encoding)` | `string` |  Convert value to a MemoryStream, using a default Unicode encoding. |
+| `str.IsInteger()` | `string` |  Check if string is an Integer number. |
+| `str.IsDouble()` | `string` |  Check if string is an Double number. |
 
+
+##### **Boolean** Extensions
+```csharp
+var str = "123.456";
+```
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `str.AsYOrN()` | `string` |  Returns Char 'Y' for true, 'N' for false. |
+| `str.AsYesOrNo()` | `string` |  Returns string 'Yes' for true, 'No' for false. |
+| `str.As0Or1()` | `string` |  Returns int '1' for true, '0' for false. |
+| `str.AsZeroOrOne()` | `string` |  Returns Char 'Zero' for true, 'One' for false. |
 
 
 ##### **DateTime** Extensions
@@ -143,6 +157,12 @@ BackgroundCronJobScheduler.Instance.ScheduleNew(
 		crownIntervalInMinutes: 1);
 ```
 
+### ☞ Helpers
+##### **Reflections**
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `Reflection.GetPublicPropertyNames<TClass>()` | `IEnumerable<string>` | Read all properties of TClass |
+| `Reflection.GetPublicPropertyValues<TClass>(object)` | `IReadOnlyDictionary<string, object?>` | Read all properties and values of TClass reference |
 
 
 
