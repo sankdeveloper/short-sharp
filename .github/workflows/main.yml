@@ -26,9 +26,6 @@ jobs:
       - name: 'Display dotnet version'
         run: dotnet --version
         
-      - name: 'Running Tests'
-        run: dotnet test ${{ env.PROJECT_TESTS_PATH }} --verbosity normal
-        
       - name: 'Restore package'
         run: dotnet restore ${{ env.PROJECT_PATH }}
         
