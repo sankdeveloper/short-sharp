@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace ShortSharp.Utility;
+namespace ShortSharp.Helpers;
 
 public static class Reflection
 {

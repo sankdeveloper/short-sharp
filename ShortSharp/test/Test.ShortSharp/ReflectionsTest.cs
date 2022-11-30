@@ -1,4 +1,4 @@
-using ShortSharp.Utility;
+using ShortSharp.Helpers;
 using Xunit;
 
 namespace Test.ShortSharp;
@@ -12,13 +12,13 @@ public class ReflectionsTest
         Assert.Equal(props[0], "Prop1");
         Assert.Equal(props[1], "Prop2");
     }
-    
+
     [Fact]
     public void GetPropertyAndValues()
     {
         TestClass obj = new();
         var props = Reflection.GetPublicPropertyValues<TestClass>(obj);
-        
+
         Assert.True(props.ContainsKey("Prop1"));
         Assert.True(props.ContainsKey("Prop2"));
         Assert.Equal(props["Prop1"], "Value One");
