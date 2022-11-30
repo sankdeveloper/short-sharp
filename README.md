@@ -90,24 +90,16 @@ public IReadOnlyDictionary<string, dynamic>> DynamicObject { get; set; }
 
 
 ### ☞ Extensions
-##### **String** Extensions
+##### **IEnumerable**
 ```csharp
-var str = "Hello, Blah blah blah...";
+private readonly List<string> _list = new() { "One", "Two", "Three", "Four", "Five" };
 ```
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `str.EqualsCaseSensitive(string compareTo)` | `bool` | Case Sensitive comparison |
-| `str.EqualsCaseIgnore(string compareTo)` | `bool` | Case In-sensitive comparison |
-| `str.GetMD5Hash(bool toBase64 = false, bool unicode = false)` | `string?` | Get MD hash |
-| `str.UrlEncode()` | `string` | Encodes a URL string. |
-| `str.UrlEncode(Encoding encoding)` | `string` | Encodes a URL string to specific encoding. |
-| `str.UrlDecode()` | `string` |  Converts a string that has been encoded for transmission in a URL into a decoded string. |
-| `str.UrlDecode(Encoding encoding)` | `string` |  Converts a string that has been encoded for transmission in a URL into a decoded string. |
-| `str.HtmlEncode()` | `string` | Converts a string to an HTML-encoded string.  |
-| `str.HtmlDecode()` | `string` |  Converts a string that has been HTML-encoded for HTTP transmission into a decoded string. |
-| `str.ToMemoryStream(Encoding encoding)` | `string` |  Convert value to a MemoryStream, using a default Unicode encoding. |
-| `str.IsInteger()` | `bool` |  Check if string is an Integer number. |
-| `str.IsDouble()` | `bool` |  Check if string is an Double number. |
+| Parameter | Description                |
+| :-------- | :------------------------- |
+| `_list.PickRandom()` | Gets any one random item |
+| `_list.PickRandom(n)` | Gets random 'n' number of items. |
+| `_list.Shuffle()` | Shuffle the list items. |
+| `_list.Shuffle(nTimes)` | Shuffle the list items n-times. |
 
 
 ##### **Boolean** Extensions
@@ -167,6 +159,26 @@ Uri uri = new Uri(urlLink);
 | `urlLink.QueryString()` | `NameValueCollection` | get entire querystring name/value collection |
 | `uri.TryGetQueryStringParam(paramKey)` | `string?` | get single querystring value with specified key |
 | `urlLink.TryGetQueryStringParam()` | `string?` | get single querystring value with specified key |
+
+
+##### **String** Extensions
+```csharp
+var str = "Hello, Blah blah blah...";
+```
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `str.EqualsCaseSensitive(string compareTo)` | `bool` | Case Sensitive comparison |
+| `str.EqualsCaseIgnore(string compareTo)` | `bool` | Case In-sensitive comparison |
+| `str.GetMD5Hash(bool toBase64 = false, bool unicode = false)` | `string?` | Get MD hash |
+| `str.UrlEncode()` | `string` | Encodes a URL string. |
+| `str.UrlEncode(Encoding encoding)` | `string` | Encodes a URL string to specific encoding. |
+| `str.UrlDecode()` | `string` |  Converts a string that has been encoded for transmission in a URL into a decoded string. |
+| `str.UrlDecode(Encoding encoding)` | `string` |  Converts a string that has been encoded for transmission in a URL into a decoded string. |
+| `str.HtmlEncode()` | `string` | Converts a string to an HTML-encoded string.  |
+| `str.HtmlDecode()` | `string` |  Converts a string that has been HTML-encoded for HTTP transmission into a decoded string. |
+| `str.ToMemoryStream(Encoding encoding)` | `string` |  Convert value to a MemoryStream, using a default Unicode encoding. |
+| `str.IsInteger()` | `bool` |  Check if string is an Integer number. |
+| `str.IsDouble()` | `bool` |  Check if string is an Double number. |
 
 
 
