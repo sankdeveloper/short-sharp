@@ -1,6 +1,6 @@
 name: Dotnet Nuget Push
 
-on: [push, release]
+on: [release]
 
 env:
   PROJECT_PATH: 'ShortSharp/src/ShortSharp/ShortSharp.csproj'
