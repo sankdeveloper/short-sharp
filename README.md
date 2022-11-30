@@ -44,15 +44,56 @@ foreach (var i in 10)
 }
 ```
 
-### ☞ Extension Helpers
+### ☞ Utilities
+##### **Simple In-memory job scheduler**
+```csharp
+BackgroundCronJobScheduler.Instance.ScheduleNew(
+		jobFunction: () => System.WriteLine("Task exeecuted"),
+		crownIntervalInMinutes: 1);
+```
+
+### ☞ Helpers
+##### **Reflections**
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `Reflection.GetPublicPropertyNames<TClass>()` | `IEnumerable<string>` | Read all properties of TClass |
+| `Reflection.GetPublicPropertyValues<TClass>(object)` | `IReadOnlyDictionary<string, object?>` | Read all properties and values of TClass reference |
+
+### ☞ Json
+##### **Json Converters**
+| Parameter | Description                |
+| :-------- | :------------------------- |
+| `DateTimeStringConverter` | datetime-in-string converter |
+| `IntConverter` | int-in-string converter |
+| `DynamicNestedObjectConverter` | dynamic object to Dictionary converter |
+
+```csharp
+// String format: "2022-10-21" (YYYY-mm-dd)
+[JsonPropertyName("date")]
+[JsonConverter(typeof(DateTimeStringConverter))]
+public DateTime Date { get; set; }
+
+// String format: "123654789"
+[JsonPropertyName("id")]
+[JsonConverter(typeof(IntConverter))]
+public int IntegerId { get; set; }
+
+// String format: {'prop1': {'one': 1}', 'prop2': {'two': 2}'.......}
+[JsonPropertyName("object")]
+[JsonConverter(typeof(DynamicNestedObjectConverter))]
+public IReadOnlyDictionary<string, dynamic>> DynamicObject { get; set; }
+```
+
+
+### ☞ Extensions
 ##### **String** Extensions
 ```csharp
 var str = "Hello, Blah blah blah...";
 ```
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `str.IsCaseSensitiveEquals(string compareTo)` | `bool` | Case Sensitive comparison |
-| `str.IsCaseInsensitiveEquals(string compareTo)` | `bool` | Case In-sensitive comparison |
+| `str.EqualsCaseSensitive(string compareTo)` | `bool` | Case Sensitive comparison |
+| `str.EqualsCaseIgnore(string compareTo)` | `bool` | Case In-sensitive comparison |
 | `str.GetMD5Hash(bool toBase64 = false, bool unicode = false)` | `string?` | Get MD hash |
 | `str.UrlEncode()` | `string` | Encodes a URL string. |
 | `str.UrlEncode(Encoding encoding)` | `string` | Encodes a URL string to specific encoding. |
@@ -60,7 +101,21 @@ var str = "Hello, Blah blah blah...";
 | `str.UrlDecode(Encoding encoding)` | `string` |  Converts a string that has been encoded for transmission in a URL into a decoded string. |
 | `str.HtmlEncode()` | `string` | Converts a string to an HTML-encoded string.  |
 | `str.HtmlDecode()` | `string` |  Converts a string that has been HTML-encoded for HTTP transmission into a decoded string. |
+| `str.ToMemoryStream(Encoding encoding)` | `string` |  Convert value to a MemoryStream, using a default Unicode encoding. |
+| `str.IsInteger()` | `bool` |  Check if string is an Integer number. |
+| `str.IsDouble()` | `bool` |  Check if string is an Double number. |
 
+
+##### **Boolean** Extensions
+```csharp
+var str = "123.456";
+```
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `str.AsYOrN()` | `string` |  Returns Char 'Y' for true, 'N' for false. |
+| `str.AsYesOrNo()` | `string` |  Returns string 'Yes' for true, 'No' for false. |
+| `str.As0Or1()` | `string` |  Returns int '1' for true, '0' for false. |
+| `str.AsZeroOrOne()` | `string` |  Returns Char 'Zero' for true, 'One' for false. |
 
 
 ##### **DateTime** Extensions
@@ -108,42 +163,6 @@ Uri uri = new Uri(urlLink);
 | `urlLink.QueryString()` | `NameValueCollection` | get entire querystring name/value collection |
 | `uri.TryGetQueryStringParam(paramKey)` | `string?` | get single querystring value with specified key |
 | `urlLink.TryGetQueryStringParam()` | `string?` | get single querystring value with specified key |
-
-
-### ☞ Json Helpers
-##### **Json Converters**
-| Parameter | Description                |
-| :-------- | :------------------------- |
-| `DateTimeStringConverter` | datetime-in-string converter |
-| `IntConverter` | int-in-string converter |
-| `DynamicNestedObjectConverter` | dynamic object to Dictionary converter |
-
-```csharp
-// String format: "2022-10-21" (YYYY-mm-dd)
-[JsonPropertyName("date")]
-[JsonConverter(typeof(DateTimeStringConverter))]
-public DateTime Date { get; set; }
-
-// String format: "123654789"
-[JsonPropertyName("id")]
-[JsonConverter(typeof(IntConverter))]
-public int IntegerId { get; set; }
-
-// String format: {'prop1': {'one': 1}', 'prop2': {'two': 2}'.......}
-[JsonPropertyName("object")]
-[JsonConverter(typeof(DynamicNestedObjectConverter))]
-public IReadOnlyDictionary<string, dynamic>> DynamicObject { get; set; }
-```
-
-### ☞ Utilities
-##### **Simple In-memory job scheduler**
-```csharp
-BackgroundCronJobScheduler.Instance.ScheduleNew(
-		jobFunction: () => System.WriteLine("Task exeecuted"),
-		crownIntervalInMinutes: 1);
-```
-
-
 
 
 
