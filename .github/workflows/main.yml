@@ -1,9 +1,10 @@
 name: Dotnet Nuget Push
 
-on: [release]
+on: [push, release]
 
 env:
   PROJECT_PATH: 'ShortSharp/src/ShortSharp/ShortSharp.csproj'
+  PROJECT_TESTS_PATH: 'ShortSharp/test/Test.ShortSharp/Test.ShortSharp.csproj'
   PACKAGE_OUTPUT_DIRECTORY: '${{ github.workspace }}/output'
   NUGET_SRC_URL: 'https://api.nuget.org/v3/index.json'
 
@@ -28,8 +29,8 @@ jobs:
       - name: 'Restore package'
         run: dotnet restore ${{ env.PROJECT_PATH }}
         
-      - name: 'Build package'
-        run: dotnet build ${{ env.PROJECT_PATH }} --no-restore --configuration Release
+      - name: Running Tests
+        run: dotnet test ${{ env.PROJECT_TESTS_PATH }} --no-restore --verbosity normal
         
       - name: 'Pack nuget'
         run: |
