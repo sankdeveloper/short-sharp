@@ -108,7 +108,7 @@ var str = "Hello, Blah blah blah...";
 
 ##### **Boolean** Extensions
 ```csharp
-var str = "123.456";
+bool str = true;
 ```
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
