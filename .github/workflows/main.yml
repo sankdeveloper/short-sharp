@@ -29,6 +29,12 @@ jobs:
       - name: 'Restore package'
         run: dotnet restore ${{ env.PROJECT_PATH }}
         
+      - name: 'Build'
+        run: dotnet build ${{ env.PROJECT_PATH }} --configuration Release --no-restore
+        
+      - name: 'Running Tests'
+        run: dotnet test ${{ env.PROJECT_TESTS_PATH }} --no-restore --verbosity normal
+        
       - name: 'Pack nuget'
         run: |
           dotnet pack ${{ env.PROJECT_PATH }} \
