@@ -12,6 +12,16 @@ public static class EnumerableExtension
         return source.Reverse().OrderBy(x => Guid.NewGuid()).Reverse();
     }
     
+    public static IEnumerable<T> Shuffle<T>(this IEnumerable<T> source, int nTimes)
+    {
+        var sourceTmp = Enumerable.Empty<T>();
+        foreach (var time in nTimes)
+        {
+            sourceTmp = source.Shuffle();
+        }
+        return sourceTmp;
+    }
+    
     public static T PickRandom<T>(this IEnumerable<T> source)
     {
         return source.PickRandom(1).Single();
