@@ -1,8 +1,12 @@
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-[![dotnet package](https://github.com/sankdeveloper/short-sharp/actions/workflows/main.yml/badge.svg)](https://github.com/sankdeveloper/short-sharp/actions/workflows/main.yml)
+![Nuget](https://img.shields.io/nuget/dt/ShortSharp?color=grn)
 ![Maintained - yes](https://img.shields.io/badge/Maintained-yes-green)
+[![dotnet package](https://github.com/sankdeveloper/short-sharp/actions/workflows/main.yml/badge.svg)](https://github.com/sankdeveloper/short-sharp/actions/workflows/main.yml)
 ![Contributions - welcome](https://img.shields.io/badge/Contributions-welcome-blueviolet)
+![docs.rs](https://img.shields.io/docsrs/s)
+![GitHub issues](https://img.shields.io/github/issues-raw/sankdeveloper/short-sharp)
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/sankdeveloper/short-sharp/main)
 
 # <img align="left" width="100" height="100" src="https://github.com/sankdeveloper/short-sharp/blob/main/ShortSharp/src/ShortSharp/logo.png?raw=true"/>ShortSharp
 
