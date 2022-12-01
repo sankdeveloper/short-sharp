@@ -26,4 +26,9 @@ public static class EnumerableExtension
     {
         return source.PickRandom(1).Single();
     }
+    
+    public static void ForEach<T>(this IEnumerable<T> sequence, Action<T> action) {
+        foreach (var item in sequence) 
+            action(item);
+    }
 }

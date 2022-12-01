@@ -48,4 +48,13 @@ public class EnumerableExtensionTest
         var item = _list.Shuffle(50).ToList();
         item.Should().HaveCount(5);
     }
+    
+    [Fact]
+    public void ForEachIEnumerable()
+    {
+        _list.AsEnumerable().ForEach(item =>
+        {
+            item.Should().NotBeNull();
+        });
+    }
 }
