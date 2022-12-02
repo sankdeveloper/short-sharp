@@ -1,4 +1,4 @@
-name: Dotnet Nuget Push
+name: 'Test | Build | Nuget-Push'
 
 on: [release]
 
