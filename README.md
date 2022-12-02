@@ -92,6 +92,8 @@ public IReadOnlyDictionary<string, dynamic>> DynamicObject { get; set; }
 ### ☞ Extensions
 ##### **IEnumerable**
 ```csharp
+// Also applies to all implemented collections
+// e.g. List, ICollection, IQuerable etc.
 private readonly List<string> _list = new() { "One", "Two", "Three", "Four", "Five" };
 private IEnumerable<Task<T>> asyncTasks = new List() { Task1, Task2.............. Task_n};
 ```
