@@ -19,11 +19,11 @@ ShortSharp(Your short code helper) is a day to day used C# Helper utility around
 ```
 
 ```bash
-  dotnet add package ShortSharp --version 1.0.0
+  dotnet add package ShortSharp --version 1.x.x
 ```
 
 ```bash
-  <PackageReference Include="ShortSharp" Version="1.0.0" />
+  <PackageReference Include="ShortSharp" Version="1.x.x" />
 ```
     
 ## API Reference
