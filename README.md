@@ -93,7 +93,7 @@ public IReadOnlyDictionary<string, dynamic>> DynamicObject { get; set; }
 ##### **IEnumerable**
 ```csharp
 private readonly List<string> _list = new() { "One", "Two", "Three", "Four", "Five" };
-private Task<T> asyncTasks = { Task1, Task2.............. Task_n};
+private IEnumerable<Task<T>> asyncTasks = new List() { Task1, Task2.............. Task_n};
 ```
 | Parameter | Description                |
 | :-------- | :------------------------- |
