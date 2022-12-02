@@ -93,13 +93,19 @@ public IReadOnlyDictionary<string, dynamic>> DynamicObject { get; set; }
 ##### **IEnumerable**
 ```csharp
 private readonly List<string> _list = new() { "One", "Two", "Three", "Four", "Five" };
+private Task<T> asyncTasks = { Task1, Task2.............. Task_n};
 ```
 | Parameter | Description                |
 | :-------- | :------------------------- |
-| `_list.PickRandom()` | Gets any one random item |
+| `_list.ForEach()` | Like `List.ForEach()` but slightly better in terms of iterations using `IEnumerator`. |
+| `_list.PickRandom()` | Gets any one random item. |
 | `_list.PickRandom(n)` | Gets random 'n' number of items. |
 | `_list.Shuffle()` | Shuffle the list items. |
 | `_list.Shuffle(nTimes)` | Shuffle the list items n-times. |
+| `_list.Join(saperator: ",")` | Gets back a string with coma saperated words. |
+| `asyncTasks.WhenAllAsync()` | Wait till all task finishes. |
+| `asyncTasks.WhenAllSequentialAsync()` | Wait till all task finishes 'sequencially'. |
+| `asyncTasks.WhenAllByChunkAsync(chunkSize: 2)` | Process tasks by chunk(just like Pagination, e.g process 2 tasks at a time). |
 
 
 ##### **Boolean** Extensions
