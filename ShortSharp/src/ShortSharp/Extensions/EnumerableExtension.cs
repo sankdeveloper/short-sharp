@@ -33,6 +33,25 @@ public static class EnumerableExtension
         foreach (var item in sequence)
             action(item);
     }
+    
+    /// <summary>
+    ///     Enumerates for each in this collection.
+    /// </summary>
+    /// <typeparam name="T">Generic type parameter.</typeparam>
+    /// <param name="sequence">The @this to act on.</param>
+    /// <param name="action">The action.</param>
+    /// <returns>An enumerator that allows foreach to be used to process for each in this collection.</returns>
+    public static IEnumerable<T> ForEachWithReturn<T>(
+        this IEnumerable<T> sequence, 
+        Action<T> action)
+    {
+        T[] array = sequence.ToArray();
+        foreach (T t in array)
+        {
+            action(t);
+        }
+        return array;
+    }
 
     public static string Join(this IEnumerable<string> sequence, string separator = "")
     {
