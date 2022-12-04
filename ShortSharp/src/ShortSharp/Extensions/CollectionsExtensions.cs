@@ -54,7 +54,7 @@ public static class CollectionsExtensions
     /// <param name="collection">The @this to act on.</param>
     /// <param name="value">The value.</param>
     /// <param name="predicate">The predicate.</param>
-    public static void RemoveIf<T>(this ICollection<T> collection, Func<T, bool> predicate, T value)
+    public static bool RemoveIf<T>(this ICollection<T> collection, Func<T, bool> predicate, T value)
     {
         if (collection is null)
         {
@@ -65,7 +65,9 @@ public static class CollectionsExtensions
         if (predicate(value))
         {
             collection.Remove(value);
+            return true;
         }
+        return false;
     }
 
     /// <summary>
