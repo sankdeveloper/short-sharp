@@ -19,11 +19,11 @@ ShortSharp(Your short code helper) is a day to day used C# Helper utility around
 ```
 
 ```bash
-  dotnet add package ShortSharp --version 1.0.0
+  dotnet add package ShortSharp --version 1.x.x
 ```
 
 ```bash
-  <PackageReference Include="ShortSharp" Version="1.0.0" />
+  <PackageReference Include="ShortSharp" Version="1.x.x" />
 ```
     
 ## API Reference
@@ -92,8 +92,10 @@ public IReadOnlyDictionary<string, dynamic>> DynamicObject { get; set; }
 ### ☞ Extensions
 ##### **IEnumerable**
 ```csharp
+// Also applies to all implemented collections
+// e.g. List, ICollection, IQuerable etc.
 private readonly List<string> _list = new() { "One", "Two", "Three", "Four", "Five" };
-private Task<T> asyncTasks = { Task1, Task2.............. Task_n};
+private IEnumerable<Task<T>> asyncTasks = new List() { Task1, Task2.............. Task_n};
 ```
 | Parameter | Description                |
 | :-------- | :------------------------- |
