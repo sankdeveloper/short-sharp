@@ -9,8 +9,8 @@ public class ReflectionsTest
     public void GetProperties()
     {
         var props = Reflection.GetPublicPropertyNames<TestClass>().ToList();
-        Assert.Equal(props[0], "Prop1");
-        Assert.Equal(props[1], "Prop2");
+        Assert.Equal("Prop1", props[0]);
+        Assert.Equal("Prop2", props[1]);
     }
 
     [Fact]

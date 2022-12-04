@@ -17,7 +17,7 @@ public class DynamicNestedObjectConverter : JsonConverter<IReadOnlyDictionary<st
             throw new JsonException($"Invalid JsonProperty type '{reader.TokenType}'.");
         }
 
-        Dictionary<string, dynamic?> keyValue = new();
+        Dictionary<string, dynamic>? keyValue = new();
         while (reader.Read())
         {
             if (reader.TokenType == JsonTokenType.EndObject)
@@ -28,7 +28,7 @@ public class DynamicNestedObjectConverter : JsonConverter<IReadOnlyDictionary<st
             var propertyName = reader.GetString() ?? null;
             if (!JsonDocument.TryParseValue(ref reader, out JsonDocument? jsonDoc)) continue;
 
-            if (!keyValue.ContainsKey(propertyName))
+            if (propertyName != null && !keyValue.ContainsKey(propertyName))
             {
                 var jsonValue = jsonDoc.RootElement.GetRawText();
                 keyValue.Add(propertyName, JsonSerializer.Deserialize<dynamic>(jsonValue));
