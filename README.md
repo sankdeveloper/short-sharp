@@ -100,6 +100,7 @@ private IEnumerable<Task<T>> asyncTasks = new List() { Task1, Task2.............
 | Parameter | Description                |
 | :-------- | :------------------------- |
 | `_list.ForEach()` | Like `List.ForEach()` but slightly better in terms of iterations using `IEnumerator`. |
+| `_list.ForEachWithReturn()` | Like `List.ForEach()` but with _returning_ back an new `IEnumerable` collection. |
 | `_list.PickRandom()` | Gets any one random item. |
 | `_list.PickRandom(n)` | Gets random 'n' number of items. |
 | `_list.Shuffle()` | Shuffle the list items. |
@@ -109,6 +110,33 @@ private IEnumerable<Task<T>> asyncTasks = new List() { Task1, Task2.............
 | `asyncTasks.WhenAllSequentialAsync()` | Wait till all task finishes 'sequencially'. |
 | `asyncTasks.WhenAllByChunkAsync(chunkSize: 2)` | Process tasks by chunk(just like Pagination, e.g process 2 tasks at a time). |
 
+
+##### **ICollection**
+```csharp
+// Also applies to all implemented collections
+// e.g. List, ICollection, IQuerable etc.
+private readonly ICollection<string> _list = new List<string> { "One", "Two", "Three", "Four", "Five" };
+```
+| Parameter | Type  | Description                |
+| :-------- | :---- | :------------------------- |
+| `_list.AddIf(predicate, value) / _list.RemoveIf(predicate, value)` | `bool` | Adds/removes only if the value satisfies the predicate. |
+| `_list.AddIfNotContains(value)` | `bool` | Add value if the ICollection doesn't contains it already. |
+| `_list.AddRange(v1, v2...) / _list.RemoveRange(v1, v2...)` | `void` | Adds/removes a range to 'values'. |
+| `_list.AddRangeIf(predicate, v1, v2...) / _list.RemoveRangeIf(predicate, v1, v2...)` | `void` | Adds/ removes a collection of objects to the end of this collection only for value who satisfies the predicate. |
+| `_list.RemoveWhere(predicate)` | `void` | Removes value that satisfies the predicate. |
+
+
+##### **IDictionary**
+```csharp
+private Dictionary<string, string> _dictionary = new();
+```
+| Parameter | Type  | Description                |
+| :-------- | :---- | :------------------------- |
+| `_dictionary.AddIfNotContainsKey(key, value)` | `bool` | Adds if not contains key. |
+| `_dictionary.RemoveIfContainsKey(key)` | `bool` | Removes if contains key. |
+| `_dictionary.UpsertByKey(key, value)` | `value` | Add if the key does not already exist, or to update a key/value pair in the IDictionary&lt;TKey, TValue&gt;> if the key already exists. |
+| `_dictionary.GetOrAdd(predicate, value)` | `value` | Adds a key/value pair if the key does not already exist. |
+| `_dictionary.RemoveIfContainsKey(predicate, value)` | `void` | Removes if contains key. |
 
 ##### **Boolean** Extensions
 ```csharp
