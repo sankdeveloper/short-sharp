@@ -1,6 +1,7 @@
-namespace ShortSharp.Extensions.IO;
+// ReSharper disable once CheckNamespace
+namespace ShortSharp.Extensions;
 
-public static partial class IoExtensions
+public static partial class Io
 {
     /// <returns>@this as a DirectoryInfo.</returns>
     public static DirectoryInfo ToDirectoryInfo(this string @this)

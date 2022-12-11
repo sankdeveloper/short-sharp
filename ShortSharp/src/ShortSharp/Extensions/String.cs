@@ -8,7 +8,7 @@ using static System.String;
 
 namespace ShortSharp.Extensions;
 
-public static class StringExtensions
+public static class StringExtension
 {
     private static readonly Regex IsWebUrlRegex = new(@"(http|https)://([\w-]+\.)+[\w-]+(/[\w- ./?%&=]*)?",
         RegexOptions.Singleline | RegexOptions.Compiled);

@@ -1,6 +1,7 @@
-namespace ShortSharp.Extensions.IO;
+// ReSharper disable once CheckNamespace
+namespace ShortSharp.Extensions;
 
-public static partial class IoExtensions
+public static partial class Io
 {
     public static IEnumerable<FileInfo> EnumerateFiles(
         this DirectoryInfo @this,

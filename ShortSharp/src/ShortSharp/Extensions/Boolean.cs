@@ -2,7 +2,7 @@ using System.Diagnostics;
 
 namespace ShortSharp.Extensions;
 
-public static class BooleanExtensions
+public static class BooleanExtension
 {
     /// <summary>
     /// Returns Char 'Y' for true, 'N' for false.
