@@ -196,6 +196,28 @@ Uri uri = new Uri(urlLink);
 | `uri.TryGetQueryStringParam(paramKey)` | `string?` | get single querystring value with specified key |
 | `urlLink.TryGetQueryStringParam()` | `string?` | get single querystring value with specified key |
 
+##### **OI** Extensions
+| On | Type  | Returns | Description |
+| :-------- | :---- | :------------------------- |:------------------------- |
+|`string`|`ToDirectoryInfo()`|`DirectoryInfo`| Converts to directory |
+|`DirectoryInfo`|`Clear()`|`void`| A DirectoryInfo extension method that clears all files and directories in this directory.|
+|`DirectoryInfo`|`DeleteDirectoriesWhere(predicate)`|`void`| A DirectoryInfo extension method that deletes the directories where. |
+|`DirectoryInfo`|`DeleteDirectoriesWhere(predicate, searchOption, searchPattern = "*.*")`|`void`| A DirectoryInfo extension method that deletes the directories where. |
+|`DirectoryInfo`|`DeleteFilesWhere(predicate)`|`void`| A DirectoryInfo extension method that deletes the files where. |
+|`DirectoryInfo`|`DeleteFilesWhere(predicate, searchOption, searchPattern = "*.*")`|`void`| A DirectoryInfo extension method that deletes the files where. |
+|`DirectoryInfo`|`DeleteOlderThan(DateTime minDate, searchOption, searchPattern = "*.*")`|`void`| A DirectoryInfo extension method that deletes the older than. |
+|`DirectoryInfo`|`EnsureDirectoryExists()`|`DirectoryInfo`| Creates all directories and subdirectories in the specified @this if the directory doesn't already exists. This methods is the same as FileInfo.CreateDirectory however it's less ambigues about what happen if the directory already exists. |
+|`DirectoryInfo`|`EnumerateDirectories(string searchPattern = "*.*", SearchOption searchOption = SearchOption.TopDirectoryOnly)`|`IEnumerable<DirectoryInfo>`| Enumerate directories|
+|`DirectoryInfo`|`GetDirectories(string searchPatterns, SearchOption searchOption)`|`DirectoryInfo[]`| Get all directories |
+|`DirectoryInfo`|`GetDirectories(string[] searchPatterns, SearchOption searchOption)`|`DirectoryInfo[]`| Get all directories |
+|`DirectoryInfo`|`GetFiles(string searchPatterns = "*.*", SearchOption searchOption = SearchOption.TopDirectoryOnly)`|`DirectoryInfo[]`| Get all files |
+|`DirectoryInfo`|`GetFiles(string[] searchPatterns, SearchOption searchOption = SearchOption.TopDirectoryOnly)`|`DirectoryInfo[]`| Get all files |
+|`DirectoryInfo`|`GetFilesWhere(Func<FileInfo, bool> predicate, string searchPattern = "*.*", SearchOption searchOption = SearchOption.TopDirectoryOnly)`|`DirectoryInfo[]`| Get all files with Where predicate having true/false. |
+|`DirectoryInfo`|`PathCombine(params string[] paths)`|`string`| Combines multiples string into a path. |
+|`DirectoryInfo`|`PathCombineFile(params string[] paths)`|`FileInfo`| Combines multiples string into a 'File' path. |
+|`DirectoryInfo`|`EnumerateFiles(string searchPattern = "*.*", SearchOption searchOption = SearchOption.TopDirectoryOnly)`|`IEnumerable<FileInfo>`| Enumerate Files. |
+
+
 
 ##### **String** Extensions
 ```csharp
