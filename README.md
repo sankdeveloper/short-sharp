@@ -210,9 +210,9 @@ Uri uri = new Uri(urlLink);
 |`DirectoryInfo`|`EnumerateDirectories(string searchPattern = "*.*", SearchOption searchOption = SearchOption.TopDirectoryOnly)`|`IEnumerable<DirectoryInfo>`| Enumerate directories|
 |`DirectoryInfo`|`GetDirectories(string searchPatterns, SearchOption searchOption)`|`DirectoryInfo[]`| Get all directories |
 |`DirectoryInfo`|`GetDirectories(string[] searchPatterns, SearchOption searchOption)`|`DirectoryInfo[]`| Get all directories |
-|`DirectoryInfo`|`GetFiles(string searchPatterns = "*.*", SearchOption searchOption = SearchOption.TopDirectoryOnly)`|`DirectoryInfo[]`| Get all files |
-|`DirectoryInfo`|`GetFiles(string[] searchPatterns, SearchOption searchOption = SearchOption.TopDirectoryOnly)`|`DirectoryInfo[]`| Get all files |
-|`DirectoryInfo`|`GetFilesWhere(Func<FileInfo, bool> predicate, string searchPattern = "*.*", SearchOption searchOption = SearchOption.TopDirectoryOnly)`|`DirectoryInfo[]`| Get all files with Where predicate having true/false. |
+|`DirectoryInfo`|`GetFiles(string searchPatterns = "*.*", SearchOption searchOption = SearchOption.TopDirectoryOnly)`|`FileInfo[]`| Get all files |
+|`DirectoryInfo`|`GetFiles(string[] searchPatterns, SearchOption searchOption = SearchOption.TopDirectoryOnly)`|`FileInfo[]`| Get all files |
+|`DirectoryInfo`|`GetFilesWhere(Func<FileInfo, bool> predicate, string searchPattern = "*.*", SearchOption searchOption = SearchOption.TopDirectoryOnly)`|`FileInfo[]`| Get all files with Where predicate having true/false. |
 |`DirectoryInfo`|`PathCombine(params string[] paths)`|`string`| Combines multiples string into a path. |
 |`DirectoryInfo`|`PathCombineFile(params string[] paths)`|`FileInfo`| Combines multiples string into a 'File' path. |
 |`DirectoryInfo`|`EnumerateFiles(string searchPattern = "*.*", SearchOption searchOption = SearchOption.TopDirectoryOnly)`|`IEnumerable<FileInfo>`| Enumerate Files. |
