@@ -196,7 +196,7 @@ Uri uri = new Uri(urlLink);
 | `uri.TryGetQueryStringParam(paramKey)` | `string?` | get single querystring value with specified key |
 | `urlLink.TryGetQueryStringParam()` | `string?` | get single querystring value with specified key |
 
-##### **OI** Extensions
+##### **OI** Extensions (_v1.2.1_)
 | On | Type  | Returns | Description |
 | :-------- | :---- | :------------------------- |:------------------------- |
 |`string`|`ToDirectoryInfo()`|`DirectoryInfo`| Converts to directory |
