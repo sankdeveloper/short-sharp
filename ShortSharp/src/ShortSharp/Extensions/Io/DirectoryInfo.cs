@@ -151,7 +151,14 @@ public static partial class Io
     /// </exception>
     public static DirectoryInfo EnsureDirectoryExists(this DirectoryInfo @this)
     {
-        return Directory.CreateDirectory(@this.FullName);
+        try
+        {
+            return Directory.CreateDirectory(@this.FullName);
+        }
+        catch
+        {
+            return @this;
+        }
     }
 
     public static IEnumerable<DirectoryInfo> EnumerateDirectories(
