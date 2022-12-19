@@ -64,6 +64,16 @@ BackgroundCronJobScheduler.Instance.ScheduleNew(
 | `Reflection.GetPublicPropertyValues<TClass>(object)` | `IReadOnlyDictionary<string, object?>` | Read all properties and values of TClass reference |
 
 ### ☞ Json
+##### **Json Reader/Writer**
+| On | Type  | Returns | Description |
+| :-------- | :---- | :------------------------- |:------------------------- |
+|`object`|`.ToJson(bool indented = true)`|`string`| Converts a Type to a JSON string. |
+|`object`|`.ToJson(JsonSerializerOptions options)`|`string`| Converts a Type to a JSON string. |
+|`object`|`.ToJsonFileAsync(string fileName)`|`void`| Writes a Type to a JSON File. |
+|`FileInfo`|`.ReadJsonFileAsync<T>()`|`T`| Read a JSON File to strongly typed `T`. |
+|`FileInfo`|`.WriteJsonDataAsync()`|`void`| Writes a JSON File. |
+|`fileName as string`|`.ReadJsonFileAsync<T>()`|`T`| Read a JSON File to strongly typed `T` type. |
+
 ##### **Json Converters**
 | Parameter | Description                |
 | :-------- | :------------------------- |
@@ -216,7 +226,8 @@ Uri uri = new Uri(urlLink);
 |`DirectoryInfo`|`PathCombine(params string[] paths)`|`string`| Combines multiples string into a path. |
 |`DirectoryInfo`|`PathCombineFile(params string[] paths)`|`FileInfo`| Combines multiples string into a 'File' path. |
 |`DirectoryInfo`|`EnumerateFiles(string searchPattern = "*.*", SearchOption searchOption = SearchOption.TopDirectoryOnly)`|`IEnumerable<FileInfo>`| Enumerate Files. |
-
+|`FileInfo`|`EnsureExists()`|`FileInfo`| Create file if not exists else dose nothing. |
+|`fileName as string`|`ToFileInfo()`|`FileInfo`| Converts string file path to `FileInfo`. |
 
 
 ##### **String** Extensions
