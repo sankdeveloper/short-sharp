@@ -64,7 +64,7 @@ BackgroundCronJobScheduler.Instance.ScheduleNew(
 | `Reflection.GetPublicPropertyValues<TClass>(object)` | `IReadOnlyDictionary<string, object?>` | Read all properties and values of TClass reference |
 
 ### ☞ Json
-##### **Json Reader/Writer**
+##### **Json Reader/Writer $\textcolor{green}{(1.3.0)}$** 
 | On | Type  | Returns | Description |
 | :-------- | :---- | :------------------------- |:------------------------- |
 |`object`|`.ToJson(bool indented = true)`|`string`| Converts a Type to a JSON string. |
@@ -206,7 +206,7 @@ Uri uri = new Uri(urlLink);
 | `uri.TryGetQueryStringParam(paramKey)` | `string?` | get single querystring value with specified key |
 | `urlLink.TryGetQueryStringParam()` | `string?` | get single querystring value with specified key |
 
-##### **OI** Extensions (_v1.2.1_)
+##### **OI** Extensions $\textcolor{green}{(1.2.1)}$
 | On | Type  | Returns | Description |
 | :-------- | :---- | :------------------------- |:------------------------- |
 |`string`|`ToDirectoryInfo()`|`DirectoryInfo`| Converts to directory |
