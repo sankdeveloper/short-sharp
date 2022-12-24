@@ -11,9 +11,9 @@
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageProjectUrl>https://github.com/sankdeveloper/short-sharp</PackageProjectUrl>
         <Company>Sanket Naik</Company>
-        <PackageVersion>1.3.0</PackageVersion>
-        <AssemblyVersion>1.3.0</AssemblyVersion>
-        <FileVersion>1.3.0</FileVersion>
+        <PackageVersion>1.4.0</PackageVersion>
+        <AssemblyVersion>1.4.0</AssemblyVersion>
+        <FileVersion>1.4.0</FileVersion>
         <Title>Short-Sharp</Title>
         <PackageIcon>logo.png</PackageIcon>
         <PackageLicenseUrl>https://choosealicense.com/licenses/mit/</PackageLicenseUrl>
