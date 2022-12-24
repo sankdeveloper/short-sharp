@@ -18,22 +18,44 @@ public class InMemoryFile
         _memoryStream = new MemoryStream();
         FileId = Guid.NewGuid();
     }
-
+    
     /// <summary>
-    /// Write/Append string content to file.
+    /// Write fresh content to file.
     /// </summary>
     /// <param name="content">file content to be written</param>
     public void WriteContent(string content)
+    {
+        ClearFile();
+        byte[] textBytes = Encoding.UTF8.GetBytes(content);
+        _memoryStream.Write(textBytes, 0, textBytes.Length);
+    }
+    
+    /// <summary>
+    /// Write fresh content to file.
+    /// </summary>
+    /// <param name="content">file content to be written</param>
+    public async Task WriteContentAsync(string content)
+    {
+        ClearFile();
+        byte[] textBytes = Encoding.UTF8.GetBytes(content);
+        await _memoryStream.WriteAsync(textBytes, 0, textBytes.Length);
+    }
+
+    /// <summary>
+    /// Append string content to file.
+    /// </summary>
+    /// <param name="content">file content to be written</param>
+    public void AppendContent(string content)
     {
         byte[] textBytes = Encoding.UTF8.GetBytes(content);
         _memoryStream.Write(textBytes, 0, textBytes.Length);
     }
 
     /// <summary>
-    /// Write/Append string content to file.
+    /// Append string content to file.
     /// </summary>
     /// <param name="content">file content to be written</param>
-    public async Task WriteContentAsync(string content)
+    public async Task AppendContentAsync(string content)
     {
         // Write some text to the MemoryStream
         byte[] textBytes = Encoding.UTF8.GetBytes(content);
