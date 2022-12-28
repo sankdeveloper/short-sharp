@@ -140,7 +140,7 @@ private IEnumerable<Task<T>> asyncTasks = new List() { Task1, Task2.............
 | `_list.Shuffle()` | Shuffle the list items. |
 | `_list.Shuffle(nTimes)` | Shuffle the list items n-times. |
 | `_list.Join(saperator: ",")` | Gets back a string with coma saperated words. |
-| `_list.ToCsv()` | Converts an `IEnumerable` to CSV formated `string`. |
+| `_list.ToCsv()` $\textcolor{green}{(1.5.0)}$ | Converts an `IEnumerable` to CSV formated `string`. |
 | `asyncTasks.WhenAllAsync()` | Wait till all task finishes. |
 | `asyncTasks.WhenAllSequentialAsync()` | Wait till all task finishes 'sequencially'. |
 | `asyncTasks.WhenAllByChunkAsync(chunkSize: 2)` | Process tasks by chunk(just like Pagination, e.g process 2 tasks at a time). |
