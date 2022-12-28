@@ -55,6 +55,29 @@ BackgroundCronJobScheduler.Instance.ScheduleNew(
 		jobFunction: () => System.WriteLine("Task exeecuted"),
 		crownIntervalInMinutes: 1);
 ```
+##### **In-Memory File**
+```csharp
+// Create, Read, Write in memory file without creating on physical Disk based on UTF8-Encoding.
+InMemoryFile inMemoryFile = new();
+
+// Write fresh content to file.
+inMemoryFile.WriteContent("old");
+await inMemoryFile.WriteContentAsync("new");
+
+// Append string content to file.(output: "new-appended")
+await inMemoryFile.AppendContentAsync("-appended");
+
+// Read all content of file.
+string content = inMemoryFile.ReadContent();
+string contentAsync = await inMemoryFile.ReadContentAsync();
+
+// Save content to physical file
+inMemoryFile.SaveAsFile("D:\\test.txt");
+await inMemoryFile.SaveAsFileAsync("D:\\test.txt");
+
+// Clear content of the file.
+inMemoryFile.ClearFile();
+```
 
 ### ☞ Helpers
 ##### **Reflections**
