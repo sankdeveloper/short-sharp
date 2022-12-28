@@ -11,6 +11,7 @@
 # <img align="left" width="100" height="100" src="https://github.com/sankdeveloper/short-sharp/blob/main/ShortSharp/src/ShortSharp/logo.png?raw=true"/>ShortSharp
 
 ShortSharp(Your short code helper) is a day to day used C# Helper utility around the most common wrappers !!!
+</br>Let us handle the most common code for your applications supporting, `Asp.net`, `Blazor`, `Webform`, `Xamarin` and plus in almost all type of C# applications that are targeted to `>=net6`.
 
 ## Installation
 
@@ -139,6 +140,7 @@ private IEnumerable<Task<T>> asyncTasks = new List() { Task1, Task2.............
 | `_list.Shuffle()` | Shuffle the list items. |
 | `_list.Shuffle(nTimes)` | Shuffle the list items n-times. |
 | `_list.Join(saperator: ",")` | Gets back a string with coma saperated words. |
+| `_list.ToCsv()` | Converts an `IEnumerable` to CSV formated `string`. |
 | `asyncTasks.WhenAllAsync()` | Wait till all task finishes. |
 | `asyncTasks.WhenAllSequentialAsync()` | Wait till all task finishes 'sequencially'. |
 | `asyncTasks.WhenAllByChunkAsync(chunkSize: 2)` | Process tasks by chunk(just like Pagination, e.g process 2 tasks at a time). |
