@@ -97,6 +97,12 @@ inMemoryFile.ClearFile();
 |`FileInfo`|`.ReadJsonFileAsync<T>()`|`T`| Read a JSON File to strongly typed `T`. |
 |`FileInfo`|`.WriteJsonDataAsync()`|`void`| Writes a JSON File. |
 |`fileName as string`|`.ReadJsonFileAsync<T>()`|`T`| Read a JSON File to strongly typed `T` type. |
+| `string` | `.IsValidJson()` $\textcolor{green}{(1.5.1)}$  | `bool` | Returns `true` if json string is valid else `false`. |
+
+```csharp
+string validJson = "{\"name\": \"John\", \"age\": 30, \"city\": \"New York\"}";
+validJson.IsValidJson(); // returns true
+```
 
 ##### **Json Converters**
 | Parameter | Description                |
