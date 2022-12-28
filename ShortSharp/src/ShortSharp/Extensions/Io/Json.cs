@@ -51,8 +51,9 @@ public static class Json
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <param name="file"></param>
+    /// <param name="options"></param>
     /// <returns></returns>
-    public static async Task<T> ReadJsonFileAsync<T>(this FileInfo file)
+    public static async Task<T> ReadJsonFileAsync<T>(this FileInfo file, JsonSerializerOptions? options = null)
     {
         if (!File.Exists(file.FullName))
         {
@@ -60,7 +61,9 @@ public static class Json
         }
 
         string jsonString = await File.ReadAllTextAsync(file.FullName);
-        return JsonSerializer.Deserialize<T>(jsonString)!;
+        return options == null ?
+            JsonSerializer.Deserialize<T>(jsonString)! : 
+            JsonSerializer.Deserialize<T>(jsonString, options)!;
     }
 
     /// <summary>
@@ -88,8 +91,9 @@ public static class Json
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <param name="fileName"></param>
+    /// <param name="options"></param>
     /// <returns></returns>
-    public static async Task<T> ReadJsonFileAsync<T>(this string fileName)
+    public static async Task<T> ReadJsonFileAsync<T>(this string fileName, JsonSerializerOptions? options = null)
     {
         if (!File.Exists(fileName))
         {
@@ -97,6 +101,8 @@ public static class Json
         }
 
         string jsonString = await File.ReadAllTextAsync(fileName);
-        return JsonSerializer.Deserialize<T>(jsonString)!;
+        return options == null ? 
+            JsonSerializer.Deserialize<T>(jsonString)! : 
+            JsonSerializer.Deserialize<T>(jsonString, options)!;
     }
 }
