@@ -13,6 +13,16 @@ public class JsonTest : IDisposable
     }
 
     [Fact]
+    public void IsValidJson()
+    {
+        var validJson = "{\"name\": \"John\", \"age\": 30, \"city\": \"New York\"}";
+        validJson.IsValidJson().Should().BeTrue();
+        
+        var invalidJson = "{\"name\": \"John\", \"age\": 30, \"city\": \"New York\"";
+        invalidJson.IsValidJson().Should().BeFalse();
+    }
+
+    [Fact]
     public async Task TestJsonExtensions()
     {
         MyClass @object = new()

@@ -105,4 +105,26 @@ public static class Json
             JsonSerializer.Deserialize<T>(jsonString)! : 
             JsonSerializer.Deserialize<T>(jsonString, options)!;
     }
+
+    /// <summary>
+    /// To validate a JSON string
+    /// </summary>
+    /// <param name="jsonString">json string like for eg. "{\"name\": \"John\", \"age\": 30, \"city\": \"New York\"}"</param>
+    /// <returns></returns>
+    public static bool IsValidJson(this string jsonString)
+    {
+        try
+        {
+            // Try to parse the JSON string
+            JsonDocument.Parse(jsonString);
+
+            // If no exception is thrown, the JSON is valid
+            return true;
+        }
+        catch (JsonException)
+        {
+            // If an exception is thrown, the JSON is invalid
+            return false;
+        }
+    }
 }
